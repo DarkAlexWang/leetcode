@@ -17,5 +17,17 @@ class Node:
 
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
-        
+        if root == None:
+            return None
+        cur = root
+        nxt = root.left
+        while cur.left:
+             cur.left.next = cur.right
+             if cur.next:
+                 cur.right.next = cur.next.left
+                 cur = cur.next
+             else:
+                 cur = nxt
+                 nxt = nxt.left
+        return root
 # @lc code=end
