@@ -2,14 +2,6 @@ import unittest
 import sys
 class Solution:
     def maxSubArray(self, nums):
-        minPrice
-        maxPrice
-        for i in range(len(nums))
-            micprice = min(minPrice, numspi)
-            maxPrice = max(maxPrice, maxPrice - minPrice)
-            ,q
-
-
 
 
 

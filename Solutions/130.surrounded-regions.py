@@ -15,25 +15,24 @@ class Solution:
             return
         n = len(board[0])
 
-
         def dfs(x, y):
-            if x < 0 or x >= n or y < 0 or y >= m or board[y][x] != 'O':
+            if x < 0 or x >= m or y < 0 or y >= n or board[x][y] != 'O':
                 return
-            board[y][x] = 'G'
-            dfs(x - 1, y)
-            dfs(x + 1, y)
-            dfs(x, y - 1)
-            dfs(x, y + 1)
+            board[x][y] = 'G'
+            dfs(x-1, y)
+            dfs(x+1, y)
+            dfs(x, y-1)
+            dfs(x, y+1)
 
-        for y in range(m):
-            dfs(0, y)
-            dfs(n - 1, y)
-        for x in range(n):
+        for x in range(m):
             dfs(x, 0)
-            dfs(x, m -1)
-        dic = {'G' :'O', 'O' : 'X','X' : 'X'}
-        for y in range(m):
-            for x in range(n):
-                board[y][x] = dic[board[y][x]]
+            dfs(x, n-1)
+        for y in range(n):
+            dfs(0, y)
+            dfs(m-1, y)
+        dic = {'G': 'O', 'O': 'X', 'X': 'X'}
+        for x in range(m):
+            for y in range(n):
+                board[x][y] = dic[board[x][y]]
 
 # @lc code=end

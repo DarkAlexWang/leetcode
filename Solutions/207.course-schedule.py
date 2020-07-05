@@ -28,4 +28,22 @@ class Solution:
                 return False
         return True
 
+
+## Topological sorting:
+
+# for each notde:
+#   if not marked:
+#       if (dfs(node) == CYCLE) return CYCLE
+# return OK
+#
+# dfs(node):
+#   if node is marked as visited: return OK
+#   if node is marked as visiting: return CYCLE
+#   mark node as visiting
+#   for each new_node in node.neighbors:
+#       if dfs(new_node) == CYCLE: return CYCLE
+#   mark node as visited
+#  #add node to the head of ordered_list
+#   return OK
+
 # @lc code=end
