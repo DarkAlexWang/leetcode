@@ -1,24 +1,13 @@
 import unittest
 import sys
-#class Solution:
-#    def maxSubArray(self, nums):
-
 class Solution:
-    def lengthOfLongestSubstringTwoDistinct(self, s):
-        res = left = 0
-        dict = {}
-        for i in range(len(s)):
-            dict[s[i]] = dict.get(s[i], 0) + 1
-            while len(dict) > 2:
-                print(len(dict))
-                dict[s[left]] -= 1
-                if dict[s[left]] == 0:
-                    del dict[s[left]]
-                    left += 1
-            res = max(res, i - left + 1)
-
-        return res
-
+    def isValidBST(self, length: int) -> int:
+        dp = [0] * (length + 1)
+        dp[1] = 1
+        for i in range(2, length + 1):
+            for j in range(1, i//2 + 1):
+                dp[i] = max(max(dp[j], j) *max(dp[i- j], (i - j)), dp[i-1])
+        return dp[length]
 
 ## UnitTest Function
 #class TestSolution(unittest.TestCase):
@@ -33,7 +22,7 @@ class Solution:
 #    unittest.main()
 
 ## Single Print Testing
-print(Solution().lengthOfLongestSubstringTwoDistinct("ccaabbb"))
+print(Solution().isValidBST(3))
 
 ## Main class function Test
 #class Main():
