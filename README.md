@@ -1,9 +1,9 @@
 # Leetcode-2020
 Started on Feb 2020 with Python in Leetcode, using leetcode-cli to help me collect question and answers.
 ## Stats
- Easy	198/224 ( 88.39 %)  ███████████████████████████░░░
- Medium	253/402 ( 62.94 %)  ███████████████████░░░░░░░░░░░
- Hard	 62/170 ( 36.47 %)  ███████████░░░░░░░░░░░░░░░░░░░
+ Easy	 65/397 ( 16.37 %)  █████░░░░░░░░░░░░░░░░░░░░░░░░░
+ Medium	 89/720 ( 12.36 %)  ████░░░░░░░░░░░░░░░░░░░░░░░░░░
+ Hard	 13/299 (  4.35 %)  ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 ## Tag
 As you can see there are several folders in it, these are the interview question I collected from 1point3acre.com
