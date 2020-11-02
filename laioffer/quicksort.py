@@ -1,47 +1,32 @@
 class Solution:
-    def quickSort(self, array):
-        if len(array) == 0:
+    def quickSort(self, arr):
+        low, high = 0, len(arr) - 1
+        self.quickSort_helper(arr, low, high)
+
+    def quickSort_helper(self, arr, low, high):
+        if low > high:
             return
+        pi = self.partition(arr, low, high)
+        self.quickSort_helper(arr, low, pi - 1)
+        self.quickSort_helper(arr, pi + 1, high)
 
-        self.quicksort_helper(array, 0, len(array) - 1)
-        return array
-
-    def quicksort_helper(self, array, left, right):
-        if left >= right:
-            return
-        pivotPos = self.partition(array, left, right)
-        self.quicksort_helper(array, left, pivotPos)
-        self.quicksort_helper(array, pivotPos + 1, right)
-
-    def partition(self, array, left, right):
-        pivotIndex = self.pivotIndex(array, left, right)
-        pivot = array[pivotIndex]
-        self.swap(array, pivotIndex, right)
-        leftBound = left
-        rightBound = right -1
-        while leftBound <= rightBound:
-            if array[leftBound] < pivot:
-                leftBound += 1
-            elif array[rightBound] >= pivot:
-                rightBound -= 1
+    def partition(self, arr, low, high):
+        pivot = arr[high]
+        i, j = low, high- 1
+        while i <= j:
+            if arr[i] < pivot:
+                i += 1
+            elif arr[j] >= pivot:
+                j -= 1
             else:
-                self.swap(array, leftBound, rightBound)
-                leftBound += 1
-                rightBound -= 1
-        self.swap(array, leftBound, right)
-        return leftBound
+                arr[i], arr[j] = arr[j], arr[i]
+                i += 1
+                j -= 1
+        arr[i], arr[high]  = arr[high], arr[i]
+        return i
 
-    def pivotIndex(self, array, left, right):
-        return right - 1
-
-    def swap(self, array, left, right):
-        temp = array[left]
-        array[left] = array[right]
-        array[right] = temp
-
-# Main class function Test
 if __name__ == '__main__':
-    input = [2, 8, 4, 5, 6, 7]
     solution = Solution()
+    input = [1, 4, 3, 9, 7, 8]
     solution.quickSort(input)
     print(input)
