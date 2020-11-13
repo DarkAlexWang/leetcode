@@ -1,12 +1,22 @@
 class Solution:
-    def find_duplicate(self, array):
-        dic = {}
-        res = []
-        for x in array:
-            dic[x] = dic.get(x, 0) + 1
-            if dic[x] > 1 and x not in res:
-                res.append(x)
-        return res
+    def isBalanced(self, root):
+        if root is None:
+            return True
+        return self.height(root) != -1
+
+    def height(self, node):
+        if node is None:
+            return 0
+        left = self.height(root.left)
+        if root.left is None:
+            return -1
+        right = self.height(root.right)
+        if root.right:
+            return -1
+        if abs(left - right) > 1:
+            return -1
+
+        return max(self.height(node.left), self.height(node.right)) + 1
 
 
 
