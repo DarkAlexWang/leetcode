@@ -18,7 +18,7 @@ class Solution:
                     for nb in graph[cur]:
                         if nb not in colored:
                             colored[nb] = -colored[cur]
-                            q.append(graph[nb])
+                            q.append(nb)
                         elif colored[nb] == colored[cur]:
                             return False
         return True
