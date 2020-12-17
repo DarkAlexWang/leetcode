@@ -1,8 +1,11 @@
 # Leetcode-2020
 Started on Feb 2020 with Python in Leetcode, using leetcode-cli to help me collect question and answers.
+
 ## Stats
  Easy	 65/397 ( 16.37 %)  █████░░░░░░░░░░░░░░░░░░░░░░░░░
+
  Medium	 89/720 ( 12.36 %)  ████░░░░░░░░░░░░░░░░░░░░░░░░░░
+
  Hard	 13/299 (  4.35 %)  ██░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 ## Tag
