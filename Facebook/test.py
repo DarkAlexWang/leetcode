@@ -1,5 +1,9 @@
 class Solution:
-    def updateBoard(self,board, click):
-        if not board:
-            return []
-        if board
+    def mergesort(self, arry):
+        cur, pre = head, ListNode(None)
+        while cur and cur.next:
+            tmp = cur.next
+            cur.next = pre
+            pre = cur
+            cur = tmp
+        return pre
