@@ -15,7 +15,6 @@ class Solution:
                 if last.get(d, 0) > i:
                     arry[i], arry[last[d]] = arry[last[d]], arry[i]
                     return int("".join(arry))
-        return num
 
 
 # @lc code=end
