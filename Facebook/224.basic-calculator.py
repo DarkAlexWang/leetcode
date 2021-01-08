@@ -4,8 +4,8 @@ class Solution:
         res, num, sign, stack = 0, 0, 1, []
         for ss in s:
             if ss.isdigit():
-                nums = 10 * num + int(ss)
-            elif ss in ['+', '-']:
+                num = 10 * num + int(ss)
+            elif ss in ['-', '+']:
                 res += sign * num
                 num = 0
                 sign = 1 if ss == '+' else -1
