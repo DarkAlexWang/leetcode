@@ -3,7 +3,7 @@
 #called the Epoch (January 1, 12:00AM, 1970), when milliseconds = 0. Create a
 #class called “Date” which is initialized with single parameter: milliseconds.
 #Then add the ability for this Date class to return the Month.
-#
+# NexKey interview questions.
 import time
 class milliesecond_to_month:
     #def monthcal(self, mill):
@@ -23,7 +23,7 @@ class milliesecond_to_month:
 
     def ms_to_month(self, millis):
         days = millis // 86400000
-        milliesToday = millies % 86400000
+        millisToday = millis % 86400000
         years_passed_approx = days / 365
         days_passed_this_year = days - (years_passed_approx * 365 + self.leap_years_count(years_passed_approx))
         year = years_passed_approx + 1970
@@ -56,10 +56,14 @@ class milliesecond_to_month:
 
     def leap_years_count(self, years_passed):
         count = 0
-        for i in range(1970, 1970 + years_passed):
+        for i in range(1970, 1970 + int(years_passed)):
             if self.isleapyear(i):
                 count += 1
         return count
 
     def isleapyear(self, year):
         return (year % 4 == 0 and not year % 100 == 0) or year % 400 == 0
+
+if __name__ == "__main__":
+    solution = milliesecond_to_month()
+    solution.ms_to_month(3242342343242342)
