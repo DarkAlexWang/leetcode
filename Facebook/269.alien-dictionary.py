@@ -1,5 +1,6 @@
-Class Solution:
-    def alienOrder(self, words: List[str]) -> str:
+# @lc lang=python3
+class Solution:
+    def alienOrder(self, words):
         res = []
         indegree, outdegree = collections.defaultdict(int), collections.defaultdict(list)
 
@@ -9,6 +10,9 @@ Class Solution:
             if len(words[i -1]) > len(words[i]) and words[i - 1][:len(words[i])] == words[i]:
                 continue
             self.buildToplogicalSort(words[i -1], words[i], indegree, outdegree)
+
+        if not outdegree and len(words) == 2 and len(words[0]) > len(words[1]):
+            return ''
 
         nodes = set()
         for word in words:
@@ -32,7 +36,7 @@ Class Solution:
 
         if outdegree:
             return ""
-        retrun "".join(res)
+        return "".join(res)
 
     def buildToplogicalSort(self, word1, word2, indegree, outdegree):
         length = min(len(word1), len(word2))
