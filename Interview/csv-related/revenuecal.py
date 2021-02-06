@@ -25,9 +25,9 @@ new_df['Engineer'].value_counts()
 #df_wrong = df[df['Company - Name'].str.contains('-')]
 #pd.set_option('display.max_rows', 1000)
 #print(df['Company - Name'])
-new_df[['Company', 'Customer']] = df['Company - Name'].str.split("-", expand = True)
-print(new_df[:5])
-company_rank = new_df['Company'].value_counts().index.tolist()
+#new_df[['Company', 'Customer']] = df['Company - Name'].str.split("-", expand = True)
+#print(new_df[:5])
+#company_rank = new_df['Company'].value_counts().index.tolist()
 #top_five = []
 #for i in range(5):
 #    top_five.append(comapy_rank[i])
