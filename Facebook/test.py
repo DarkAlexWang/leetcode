@@ -1,26 +1,24 @@
+# @lc id=207 lang=python3
 class Solution:
-    def findOrder(self, numCourses, prerequisites):
-        outdegree = collections.defaultdict()
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         indegree = [0 for _ in range(numCourses)]
-        res = []
+        outdegree = collections.defaultdict(list)
 
-        for succ, pre in prerequisites:
-            outdegree[succ].append(pre)
+        for pre, succ in prerequisites:
+            outdegree[pre].append(succ)
             indegree[succ] += 1
 
         q = collections.deque()
-
         for i in range(len(indegree)):
             if indegree[i] == 0:
                 q.append(i)
-                res.append(i)
         count = 0
         while q:
             cur = q.popleft()
             count += 1
-            for nb in outdegree[cur]:
-                indegree[nb] -= 1
-                if indegree[nb] == 0:
-                    q.append(nb)
-                    res.append(nb)
-        return res if count == numCourses else []
+
+        for nb in outdegree[cur]:
+            indegree[nb] -= 1
+            if indegree[nb] == 0:
+                q.append(nb)
+        return count == numCourses
