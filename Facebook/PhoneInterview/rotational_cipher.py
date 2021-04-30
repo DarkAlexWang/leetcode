@@ -13,20 +13,20 @@ def rotationalCipher(input, rotation_factor):
         if ch.isalpha():
           new = ord(ch) + rotation_factor % 26
           if new > ord('z'):
-            tmp = chr(ord('a') + new - ord('z'))
+            tmp = chr(ord('a') + new - ord('z') - 1)
           else:
               tmp = chr(new)
       elif ch.isupper():
           if ch.isalpha():
             new = ord(ch) + rotation_factor % 26
           if new > ord('Z'):
-            tmp = chr(ord('A') + new - ord('Z'))
+            tmp = chr(ord('A') + new - ord('Z') - 1)
           else:
               tmp = chr(new)
       elif ch.isdigit():
         new = ord(ch) + rotation_factor % 10
         if new > ord('9'):
-          tmp = chr(ord('0') + new - ord('9'))
+          tmp = chr(ord('0') + new - ord('9') - 1)
         else:
             tmp = chr(new)
       else:

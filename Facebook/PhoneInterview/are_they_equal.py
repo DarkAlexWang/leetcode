@@ -1,24 +1,23 @@
 import math
-import collections
 # Add any extra import statements you may need here
-
+import collections
 
 # Add any helper functions you may need here
 
 
-def numberOfWays(arr, k):
-     # Write your code here
-    dic = collections.defaultdict()
-    count = collections.Counter(arr)
-    twice_count = 0
-    for i in range(len(arr)):
-        count.get(arr[i], 0) + 1
+def are_they_equal(array_a, array_b):
+  # Write your code here
+    counter = collections.defaultdict(int)
+    for t in array_a:
+        counter[t] += 1
+    for a in array_b:
+        if a not in counter or counter[a] == 0:
+            return False
+        counter[a] -= 1
+    return all(v == 0 for v in counter.values())
 
-    for i in range(len(arr)):
-        twice_count += count[k - arr[i]]
-        if  k - arr[i] == arr[i]:
-            twice_count -= 1
-    return twice_count // 2
+
+
 
 
 
@@ -28,9 +27,8 @@ def numberOfWays(arr, k):
 
 # These are the tests we use to determine if the solution is correct.
 # You can add your own at the bottom, but they are otherwise not editable!
-
-def printInteger(n):
-  print('[', n, ']', sep='', end='')
+def printString(string):
+  print('[\"', string, '\"]', sep='', end='')
 
 test_case_number = 1
 
@@ -45,23 +43,25 @@ def check(expected, output):
     print(rightTick, 'Test #', test_case_number, sep='')
   else:
     print(wrongTick, 'Test #', test_case_number, ': Expected ', sep='', end='')
-    printInteger(expected)
+    printString(expected)
     print(' Your output: ', end='')
-    printInteger(output)
+    printString(output)
     print()
   test_case_number += 1
 
 if __name__ == "__main__":
-  k_1 = 6
-  arr_1 = [1, 2, 3, 4, 3]
-  expected_1 = 2
-  output_1 = numberOfWays(arr_1, k_1)
+  n_1 = 4
+  a_1 = [1, 2, 3, 4]
+  b_1 = [1, 4, 3, 2]
+  expected_1 = True
+  output_1 = are_they_equal(a_1, b_1)
   check(expected_1, output_1)
 
-  k_2 = 6
-  arr_2 = [1, 5, 3, 3, 3]
-  expected_2 = 4
-  output_2 = numberOfWays(arr_2, k_2)
+  n_2 = 4
+  a_2 = [1, 2, 3, 4]
+  b_2 = [1, 2, 3, 5]
+  expected_2 = False
+  output_2 = are_they_equal(a_2, b_2)
   check(expected_2, output_2)
 
   # Add your own test cases here
