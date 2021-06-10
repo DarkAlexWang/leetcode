@@ -11,7 +11,9 @@
 class Solution:
     def __init__(self):
         self.buf4 = ['']* 4
+        # current internal buffer position
         self.i4 = 0
+        # number of characters in the internal buffer
         self.n4 = 0
 
     def read(self, buf: List[str], n: int) -> int:
