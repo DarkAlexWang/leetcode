@@ -1,4 +1,4 @@
-# @lc lang=python3
+# @lc app=leetcode lang=python3
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         if not board or len(board) == 0 or len(board[0]) == 0:
