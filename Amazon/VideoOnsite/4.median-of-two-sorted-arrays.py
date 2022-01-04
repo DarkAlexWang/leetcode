@@ -33,6 +33,4 @@ class Solution:
 
             else:
                 return self.kth(nums1, nums2[:i_nums2], k)
-
-
 # @lc code=end
