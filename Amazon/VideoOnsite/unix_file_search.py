@@ -100,3 +100,7 @@ txtFilter=extensionFilter("txt")
 myFileSystem=fileSystem()
 myFileSystem.addFilter(greater5)
 myFileSystem.addFilter(txtFilter)
+
+
+print(myFileSystem.applyORFiltering(f1))
+print(myFileSystem.applyANDFiltering(f1))
