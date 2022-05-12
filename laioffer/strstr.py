@@ -7,7 +7,7 @@ class Solution:
         for i in range(len(large) - len(small)):
             if large[i: (i +len(small))] == small:
                 return i
-        return - 1
+        return -1
 
 if __name__ == '__main__':
     solution = Solution()

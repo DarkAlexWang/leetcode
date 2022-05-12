@@ -35,6 +35,4 @@ class Solution:
             else:
                  flag = True
         return True
-
-
 # @lc code=end
