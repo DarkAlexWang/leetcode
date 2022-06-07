@@ -1,7 +1,8 @@
 class Solution:
     def quickSort(self, arr):
-
-        low, high = 0, len(arr)
+        if len(arr) <= 1:
+            return
+        low, high = 0, len(arr) - 1
         self.quicksort_helper(arr, low, high)
 
     def quicksort_helper(self, arr, low, high):
@@ -23,7 +24,8 @@ class Solution:
         return (i + 1)
 
 if __name__ == '__main__':
-    input = [2, 8, 4, 5, 7, 1]
+    #input = [2, 8, 4, 5, 7, 1]
+    input = [0, 1, 2, 6, 5]
     solution = Solution()
     solution.quickSort(input)
     print(input)

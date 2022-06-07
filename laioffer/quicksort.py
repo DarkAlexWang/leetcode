@@ -27,6 +27,7 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    input = [1, 4, 3, 9, 7, 8]
+    #input = [1, 4, 3, 9, 7, 8]
+    input = [0, 1, 2, 6, 5]
     solution.quickSort(input)
     print(input)
